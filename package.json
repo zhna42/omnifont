@@ -4,15 +4,19 @@
   "description": "Zero-dependency headless font manager for Canvas / SVG / WebGL. Google Fonts + custom JSON, race-safe cache, &text preview optimization.",
   "type": "module",
   "license": "MIT",
+  "author": "Nikita Zhitin <zhna.ru@gmail.com> (https://github.com/zhna42)",
   "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhna42/omnifont.git"
   },
   "bugs": "https://github.com/zhna42/omnifont/issues",
-  "homepage": "https://github.com/zhna42/omnifont#readme",
+  "homepage": "https://zhna42.github.io/omnifont",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "README.ru.md",
+    "LICENSE"
   ],
   "main": "./dist/omnifont.umd.cjs",
   "module": "./dist/omnifont.js",
@@ -27,8 +31,9 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc --noEmit && vite build",
-    "prepublishOnly": "npm run build",
     "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "version": "git add -A package-lock.json && npm pkg set version=$npm_package_version --json >/dev/null 2>&1 || true",
     "example:google": "vite --config examples/google/vite.config.ts",
     "example:custom": "vite --config examples/custom/vite.config.ts",
     "example:all": "vite --config examples/vite.config.ts",
@@ -37,13 +42,22 @@
   "keywords": [
     "fonts",
     "google-fonts",
+    "font-manager",
     "headless",
     "typescript",
     "zero-dependency",
     "canvas",
     "webgl",
-    "svg"
+    "svg",
+    "opentype",
+    "three.js",
+    "cad",
+    "fontface",
+    "webfont"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
