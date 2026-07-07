@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>omnifont — demos</title>
+    <style>
+      :root {
+        --bg: #0f1115;
+        --panel: #181b22;
+        --border: #2a2f3a;
+        --text: #e6e9ef;
+        --muted: #8b93a3;
+        --accent: #4f8cff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+      h1 { font-size: 28px; font-weight: 700; margin: 0 0 8px; }
+      .lead { color: var(--muted); font-size: 15px; margin: 0 0 32px; }
+      .grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+      @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+      a.card {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 22px;
+        transition: border-color 0.15s, transform 0.15s;
+      }
+      a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+      a.card h2 { margin: 0 0 6px; font-size: 17px; }
+      a.card p { margin: 0; color: var(--muted); font-size: 14px; }
+      .foot { margin-top: 40px; font-size: 13px; color: var(--muted); }
+      .foot a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>omnifont</h1>
+      <p class="lead">
+        Zero-dependency headless font manager for Canvas / SVG / WebGL. Live demos:
+      </p>
+      <div class="grid">
+        <a class="card" href="./google/">
+          <h2>Google Fonts Mode</h2>
+          <p>Загрузка каталога по API-ключу, превью с оптимизацией <code>&amp;text=</code>.</p>
+        </a>
+        <a class="card" href="./custom/">
+          <h2>Custom JSON Mode</h2>
+          <p>Парсинг произвольного JSON через <code>setPattern()</code> без ключа.</p>
+        </a>
+      </div>
+      <p class="foot">
+        <a href="https://github.com/zhna42/omnifont">GitHub repository</a>
+      </p>
+    </div>
+  </body>
+</html>
