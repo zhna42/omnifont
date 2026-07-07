@@ -1,0 +1,52 @@
+{
+  "name": "omnifont",
+  "version": "0.1.0",
+  "description": "Zero-dependency headless font manager for Canvas / SVG / WebGL. Google Fonts + custom JSON, race-safe cache, &text preview optimization.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhna42/omnifont.git"
+  },
+  "bugs": "https://github.com/zhna42/omnifont/issues",
+  "homepage": "https://github.com/zhna42/omnifont#readme",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/omnifont.umd.cjs",
+  "module": "./dist/omnifont.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/omnifont.js",
+      "require": "./dist/omnifont.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc --noEmit && vite build",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "example:google": "vite --config examples/google/vite.config.ts",
+    "example:custom": "vite --config examples/custom/vite.config.ts",
+    "example:all": "vite --config examples/vite.config.ts",
+    "build:demo": "vite build --config examples/vite.config.ts"
+  },
+  "keywords": [
+    "fonts",
+    "google-fonts",
+    "headless",
+    "typescript",
+    "zero-dependency",
+    "canvas",
+    "webgl",
+    "svg"
+  ],
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.2.1"
+  }
+}

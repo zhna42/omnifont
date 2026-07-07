@@ -1,0 +1,17 @@
+# Source and build tooling — only dist/ is published (see "files" in package.json)
+src
+examples
+demo-dist
+.github
+
+# Configs
+tsconfig.json
+vite.config.ts
+package-lock.json
+
+# Misc
+*.log
+.DS_Store
+.vscode
+.env
+.env.*
